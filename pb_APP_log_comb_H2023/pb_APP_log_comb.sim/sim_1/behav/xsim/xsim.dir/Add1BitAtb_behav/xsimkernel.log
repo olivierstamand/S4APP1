@@ -1,0 +1,4 @@
+Running: xsim.dir/Add1BitAtb_behav/xsimk -simmode gui -wdb Add1BitAtb_behav.wdb -simrunnum 0 -socket 40547
+Design successfully loaded
+Design Loading Memory Usage: 32924 KB (Peak: 33524 KB)
+Design Loading CPU Usage: 30 ms

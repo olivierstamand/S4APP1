@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Wed Jan 10 15:15:14 2024
+# Process ID: 94752
+# Current directory: /home/olivier/Downloads/pb_APP_log_comb_H2023/pb_APP_log_comb.sim/sim_1/behav/xsim
+# Command line: wbtcv -mode batch -source /home/olivier/Downloads/pb_APP_log_comb_H2023/pb_APP_log_comb.sim/sim_1/behav/xsim/xsim.dir/Add1Bit_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: /home/olivier/Downloads/pb_APP_log_comb_H2023/pb_APP_log_comb.sim/sim_1/behav/xsim/webtalk.log
+# Journal file: /home/olivier/Downloads/pb_APP_log_comb_H2023/pb_APP_log_comb.sim/sim_1/behav/xsim/webtalk.jou
+#-----------------------------------------------------------
+source /home/olivier/Downloads/pb_APP_log_comb_H2023/pb_APP_log_comb.sim/sim_1/behav/xsim/xsim.dir/Add1Bit_tb_behav/webtalk/xsim_webtalk.tcl -notrace

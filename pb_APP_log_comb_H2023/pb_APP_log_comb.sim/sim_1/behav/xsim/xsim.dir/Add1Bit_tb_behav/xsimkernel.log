@@ -1,0 +1,7 @@
+Running: xsim.dir/Add1Bit_tb_behav/xsimk -simmode gui -wdb Add1Bit_tb_behav.wdb -simrunnum 0 -socket 55291
+Design successfully loaded
+Design Loading Memory Usage: 32924 KB (Peak: 33524 KB)
+Design Loading CPU Usage: 20 ms
+Simulation completed
+Simulation Memory Usage: 114660 KB (Peak: 172192 KB)
+Simulation CPU Usage: 20 ms

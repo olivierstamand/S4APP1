@@ -1,0 +1,1 @@
+-wto "6e88f38826214958bd01804f64fad5de" --incr --debug "typical" --relax --mt "8" -L "xil_defaultlib" -L "secureip" --snapshot "Add1BitAtb_behav" "xil_defaultlib.Add1BitAtb" -log "elaborate.log" 
