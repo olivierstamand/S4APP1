@@ -50,8 +50,22 @@ component Add4bits is
   );
 end component;
 signal inverted : std_logic_vector(3 downto 0);
-signal signed : std_logic_vector(3 downto 0);
+signal signedOut : std_logic_vector(3 downto 0);
 begin
-inverted <= not(moins5(3)) & not(moins5(2)) & not(moins5(1)) & not(moins5(0));
-adder: Add4bits port map(inverted, "0001", '0', signed);
+inverted <= not(moins5(3)) & not(moins5(2)) & not(moins5(1)) & not(moins5(0)); -- on inverse pas le signe
+adder: Add4bits port map(inverted, "0001", '0', signedOut);
+process (moins5, signedOut) is 
+begin
+    case moins5(3) is
+        when '1' =>
+            code_signe <= "1111";
+            unite_s <= moins5(3) & signedOut(2 downto 0);
+        when '0' =>
+            code_signe <= "0000";
+            unite_s <= moins5;
+        when others =>
+            code_signe <= "1110";
+            unite_s <= "1110";
+     end case;
+end process;
 end Behavioral;

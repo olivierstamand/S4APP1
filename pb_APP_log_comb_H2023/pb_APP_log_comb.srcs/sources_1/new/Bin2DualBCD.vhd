@@ -43,9 +43,29 @@ entity Bin2DualBCD is
 end Bin2DualBCD;
 
 architecture Behavioral of Bin2DualBCD is
-
+component Bin2DualBCD_NS is
+  Port (
+    ABCin : in std_logic_vector(3 downto 0);
+    dizaines: out std_logic_vector(3 downto 0);
+    unite_ns: out std_logic_vector(3 downto 0)
+  );
+end component;
+component Bin2DualBDC_s is
+  Port ( 
+    moins5 : in std_logic_vector(3 downto 0);
+    code_signe : out std_logic_vector (3 downto 0);
+    unite_s : out std_logic_vector (3 downto 0)
+  );
+end component;
+component Moins_5 is
+    Port(
+        ADCbin : in std_logic_vector(3 downto 0);
+        ADCout : out std_logic_vector (3 downto 0)
+        );
+end component;
+signal moins5out : std_logic_vector(3 downto 0);
 begin
-
-
-
+moins5: Moins_5 port map(ADCbin, moins5out);
+NS : Bin2DualBCD_NS port map(ADCbin, Dizaines, Unites_ns);
+S : Bin2DualBDC_s port map(moins5out, code_signe, Unite_s);
 end Behavioral;

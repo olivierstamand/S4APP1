@@ -2,3 +2,6 @@ Running: xsim.dir/pariteTb_behav/xsimk.exe -simmode gui -wdb pariteTb_behav.wdb 
 Design successfully loaded
 Design Loading Memory Usage: 5980 KB (Peak: 5980 KB)
 Design Loading CPU Usage: 0 ms
+Simulation completed
+Simulation Memory Usage: 6472 KB (Peak: 6472 KB)
+Simulation CPU Usage: 0 ms

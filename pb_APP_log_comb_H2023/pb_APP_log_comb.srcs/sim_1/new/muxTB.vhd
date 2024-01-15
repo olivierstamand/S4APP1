@@ -28,33 +28,36 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
-entity pariteTb is
+entity muxTB is
 --  Port ( );
-end pariteTb;
+end muxTB;
 
-architecture Behavioral of pariteTb is
+architecture Behavioral of muxTB is
 
-component paritePair is
-    Port ( 
-        ABCin : in std_logic_vector(2 downto 0);
-        parite: out std_logic_vector(3 downto 0)
+component mux is
+    Port (
+    ADCbin : in std_logic_vector(3 downto 0);
+    Dizaines: in std_logic_vector(3 downto 0);
+    Unites_ns: in std_logic_vector(3 downto 0);
+    Code_signe: in std_logic_vector(3 downto 0);
+    Unite_s: in std_logic_vector(3 downto 0);
+    erreur: in std_logic;
+    BTN: in std_logic_vector(1 downto 0);
+    S1, S2 : in std_logic;
+    DAFF0: out std_logic_vector(3 downto 0); --droite
+    DAFF1: out std_logic_vector(3 downto 0); -- gauche
+    pariteOut: out std_logic_vector(3 downto 0) -- pour la del LD0
     );
 end component;
-component pariteImpair is
-    Port ( 
-        ABCin : in std_logic_vector(2 downto 0);
-        parite: out std_logic_vector(3 downto 0)
-    );
-end component;   
+-- dual BCD pour les inputs
 constant sysclk_Period  : time := 100 ns;
-   signal input: std_logic_vector (2 downto 0) := "000";
+signal input: std_logic_vector (3 downto 0) := "1011";
 ----------------------------------------------------------------------------
-
 begin
 
 -- UUT : Unit Under Test
-UUTPAIR: paritePair PORT MAP(input);
-UUTIMPAIR: pariteImpair PORT MAP (input);
+UUT: mux PORT MAP(input);
+-- tester les differentes combinaisons de boutons pour le mux
    
    
    -- test bench
@@ -62,25 +65,8 @@ UUTIMPAIR: pariteImpair PORT MAP (input);
   
       BEGIN
          -- simuler une sequence de valeurs a l'entree 
-         
-         input <= "000";
+         input <= "0000";
          wait  for sysclk_Period;
-         input <= "001";
-         wait  for sysclk_Period;
-         input <= "010";
-         wait  for sysclk_Period;
-         input <= "011";
-         wait  for sysclk_Period;
-         input <= "100";
-         wait  for sysclk_Period;
-         input <= "101";
-         wait  for sysclk_Period;
-         input <= "110";
-         wait  for sysclk_Period;
-         input <= "111";
-         wait  for sysclk_Period;
-         
-
       END PROCESS;
 
 END Behavioral;
