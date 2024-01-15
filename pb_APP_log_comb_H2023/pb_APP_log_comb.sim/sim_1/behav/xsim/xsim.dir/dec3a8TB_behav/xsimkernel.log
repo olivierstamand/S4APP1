@@ -1,0 +1,7 @@
+Running: xsim.dir/dec3a8TB_behav/xsimk.exe -simmode gui -wdb dec3a8TB_behav.wdb -simrunnum 0 -socket 17280
+Design successfully loaded
+Design Loading Memory Usage: 6412 KB (Peak: 6412 KB)
+Design Loading CPU Usage: 15 ms
+Simulation completed
+Simulation Memory Usage: 6952 KB (Peak: 6952 KB)
+Simulation CPU Usage: 31 ms

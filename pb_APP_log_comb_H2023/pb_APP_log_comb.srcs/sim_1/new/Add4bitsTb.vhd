@@ -37,6 +37,7 @@ architecture Behavioral of Add4bitsTB is
 COMPONENT Add4bits
     Port (X: in std_logic_vector(3 downto 0);
           Y: in std_logic_vector(3 downto 0);
+          Cin: in std_logic;
           S: out std_logic_vector(3 downto 0);
            OVERFLOW : out STD_LOGIC
           );
@@ -44,13 +45,14 @@ end COMPONENT;
    constant sysclk_Period  : time := 100 ns;
    signal X: std_logic_vector (3 downto 0) := "0000";
    signal Y: std_logic_vector (3 downto 0) := "0000";
+   signal Cin: std_logic := '0';
 ----------------------------------------------------------------------------
 
 begin
 
 -- UUT : Unit Under Test
 UUT: Add4bits 
-   PORT MAP( X,Y);
+   PORT MAP(X,Y,Cin);
    
    
    -- test bench

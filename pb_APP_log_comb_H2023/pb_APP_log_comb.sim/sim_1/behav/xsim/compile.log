@@ -1,2 +1,2 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "/home/olivier/Downloads/pb_APP_log_comb_H2023/pb_APP_log_comb.srcs/sim_1/new/Add4bitsTb.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'Add4bitsTB'
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/Ecole/Session_4/APP1/S4APP1/pb_APP_log_comb_H2023/pb_APP_log_comb.srcs/sources_1/new/Bin2DualBDC_s.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Bin2DualBDC_s'
