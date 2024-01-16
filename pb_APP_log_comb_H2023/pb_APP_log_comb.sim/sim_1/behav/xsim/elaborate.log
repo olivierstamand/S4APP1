@@ -1,7 +1,12 @@
 Vivado Simulator 2020.2
 Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+<<<<<<< HEAD
 Running: D:/Xilinx/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto 6e88f38826214958bd01804f64fad5de --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot muxTB_behav xil_defaultlib.muxTB -log elaborate.log 
 Using 2 slave threads.
+=======
+Running: /tools/Xilinx/Vivado/2020.2/bin/unwrapped/lnx64.o/xelab -wto 6e88f38826214958bd01804f64fad5de --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot thermo2bin_TB_behav xil_defaultlib.thermo2bin_TB -log elaborate.log 
+Using 8 slave threads.
+>>>>>>> c89274f (lol)
 Starting static elaboration
 Completed static elaboration
 Starting simulation data flow analysis
@@ -10,6 +15,16 @@ Time Resolution for simulation is 1ps
 Compiling package std.standard
 Compiling package std.textio
 Compiling package ieee.std_logic_1164
+<<<<<<< HEAD
 Compiling architecture behavioral of entity xil_defaultlib.mux [mux_default]
 Compiling architecture behavioral of entity xil_defaultlib.muxtb
 Built simulation snapshot muxTB_behav
+=======
+Compiling architecture behavioral of entity xil_defaultlib.Add1bitA [add1bita_default]
+Compiling architecture behavioral of entity xil_defaultlib.Add1bitB [add1bitb_default]
+Compiling architecture behavioral of entity xil_defaultlib.Add4bits [add4bits_default]
+Compiling architecture behavioral of entity xil_defaultlib.thermo2bin3bits [thermo2bin3bits_default]
+Compiling architecture behavioral of entity xil_defaultlib.thermo2bin [thermo2bin_default]
+Compiling architecture behavioral of entity xil_defaultlib.thermo2bin_tb
+Built simulation snapshot thermo2bin_TB_behav
+>>>>>>> c89274f (lol)

@@ -1,7 +1,7 @@
-Running: xsim.dir/moins5TB_behav/xsimk.exe -simmode gui -wdb moins5TB_behav.wdb -simrunnum 0 -socket 37979
+Running: xsim.dir/moins5TB_behav/xsimk -simmode gui -wdb moins5TB_behav.wdb -simrunnum 0 -socket 48113
 Design successfully loaded
-Design Loading Memory Usage: 5992 KB (Peak: 5992 KB)
-Design Loading CPU Usage: 15 ms
+Design Loading Memory Usage: 32940 KB (Peak: 33528 KB)
+Design Loading CPU Usage: 10 ms
 Simulation completed
-Simulation Memory Usage: 6492 KB (Peak: 6492 KB)
-Simulation CPU Usage: 15 ms
+Simulation Memory Usage: 114676 KB (Peak: 172208 KB)
+Simulation CPU Usage: 10 ms
