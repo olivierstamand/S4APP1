@@ -42,22 +42,13 @@ entity mux is
     BTN: in std_logic_vector(1 downto 0);
     S1, S2 : in std_logic;
     DAFF0: out std_logic_vector(3 downto 0); --droite
-    DAFF1: out std_logic_vector(3 downto 0); -- gauche
-    pariteOut: out std_logic_vector(3 downto 0) -- pour la del LD0
+    DAFF1: out std_logic_vector(3 downto 0) -- gauche
     );
 end mux;
 
 architecture Behavioral of mux is
-component parite is
-  Port (
-    s1 : in std_logic;
-    ABCin : in std_logic_vector(3 downto 0);
-    parite : out std_logic_vector(3 downto 0)
-  );
-end component;
-begin
-pOut: parite port map (S1, ADCbin, pariteOut);
 
+begin
 process (ADCbin, Dizaines, Unites_ns, Code_signe, Unite_s, BTN, S2) is
 begin
     if (BTN(0) = '0' AND BTN(1) = '0') then

@@ -1,0 +1,39 @@
+# compile vhdl design source files
+vhdl2008 xil_defaultlib  \
+"../../../../pb_APP_log_comb.srcs/sources_1/imports/src/septSegments_encodeur.vhd" \
+"../../../../pb_APP_log_comb.srcs/sources_1/imports/src/septSegments_refreshPmod.vhd" \
+"../../../../pb_APP_log_comb.srcs/sources_1/imports/src/septSegments_Top.vhd" \
+"../../../../pb_APP_log_comb.srcs/sources_1/imports/src/synchro_module_v2.vhd" \
+"../../../../pb_APP_log_comb.srcs/sources_1/imports/src/AppCombi_top.vhd" \
+
+vhdl xil_defaultlib  \
+"../../../../pb_APP_log_comb.srcs/sources_1/new/Add1bitB.vhd" \
+"../../../../pb_APP_log_comb.srcs/sources_1/new/Add1bitA.vhd" \
+"../../../../pb_APP_log_comb.srcs/sources_1/new/Add4bits.vhd" \
+"../../../../pb_APP_log_comb.srcs/sources_1/new/Fact2_3.vhd" \
+"../../../../pb_APP_log_comb.srcs/sources_1/new/dec3a8.vhd" \
+"../../../../pb_APP_log_comb.srcs/sources_1/new/paritePair.vhd" \
+"../../../../pb_APP_log_comb.srcs/sources_1/new/pariteImpair.vhd" \
+"../../../../pb_APP_log_comb.srcs/sources_1/new/Bin2DualBCD.vhd" \
+"../../../../pb_APP_log_comb.srcs/sources_1/new/Moins_5.vhd" \
+"../../../../pb_APP_log_comb.srcs/sources_1/new/Bin2DualBDC_s.vhd" \
+"../../../../pb_APP_log_comb.srcs/sources_1/new/parite.vhd" \
+"../../../../pb_APP_log_comb.srcs/sources_1/new/Bin2DualBCD_NS.vhd" \
+"../../../../pb_APP_log_comb.srcs/sources_1/new/mux.vhd" \
+
+vhdl2008 xil_defaultlib  \
+"../../../../pb_APP_log_comb.srcs/sim_1/imports/verif/AppCombi_top_tb.vhd" \
+
+vhdl xil_defaultlib  \
+"../../../../pb_APP_log_comb.srcs/sim_1/imports/Pictures/compteur_simple_tb.vhd" \
+"../../../../pb_APP_log_comb.srcs/sim_1/new/Add1BitTB.vhd" \
+"../../../../pb_APP_log_comb.srcs/sim_1/new/Add4bitsTb.vhd" \
+"../../../../pb_APP_log_comb.srcs/sim_1/new/Fact2_3TB.vhd" \
+"../../../../pb_APP_log_comb.srcs/sim_1/new/dec3a8TB.vhd" \
+"../../../../pb_APP_log_comb.srcs/sim_1/new/pariteTb.vhd" \
+"../../../../pb_APP_log_comb.srcs/sim_1/new/moins5TB.vhd" \
+"../../../../pb_APP_log_comb.srcs/sim_1/new/Bin2DualBCDTB.vhd" \
+"../../../../pb_APP_log_comb.srcs/sim_1/new/muxTB.vhd" \
+
+# Do not sort compile order
+nosort

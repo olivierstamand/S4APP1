@@ -45,18 +45,24 @@ component mux is
     BTN: in std_logic_vector(1 downto 0);
     S1, S2 : in std_logic;
     DAFF0: out std_logic_vector(3 downto 0); --droite
-    DAFF1: out std_logic_vector(3 downto 0); -- gauche
-    pariteOut: out std_logic_vector(3 downto 0) -- pour la del LD0
+    DAFF1: out std_logic_vector(3 downto 0) -- gauche
     );
 end component;
 -- dual BCD pour les inputs
 constant sysclk_Period  : time := 100 ns;
-signal input: std_logic_vector (3 downto 0) := "1011";
+signal input: std_logic_vector (3 downto 0) := "0011";
+signal diz : std_logic_vector( 3 downto 0) := "0000";
+signal unit_ns : std_logic_vector( 3 downto 0) := "0011";
+signal signe : std_logic_vector(3 downto 0) := "1111";
+signal unit_s : std_logic_vector(3 downto 0) := "1010";
+signal err : std_logic := '0';
+signal btn : std_logic_vector(1 downto 0) := "00";
+signal s1, s2 : std_logic;
 ----------------------------------------------------------------------------
 begin
 
 -- UUT : Unit Under Test
-UUT: mux PORT MAP(input);
+UUT: mux PORT MAP(input, diz, unit_ns, signe, unit_s, err, btn, s1, s2);
 -- tester les differentes combinaisons de boutons pour le mux
    
    
@@ -65,7 +71,27 @@ UUT: mux PORT MAP(input);
   
       BEGIN
          -- simuler une sequence de valeurs a l'entree 
-         input <= "0000";
+         BTN <= "00";
+         wait  for sysclk_Period;
+         BTN <= "01";
+         wait  for sysclk_Period;
+         BTN <= "10";
+         wait  for sysclk_Period;
+         BTN <= "11";
+         wait  for sysclk_Period;
+         s2 <= '1';
+         wait  for sysclk_Period;
+         input <= "0100";
+         diz <= "0000";
+         unit_ns <= "0100";
+         signe <= "1111";
+         unit_s <= "1001";
+         s2 <= '0';
+         BTN <= "00";
+         wait  for sysclk_Period;
+         BTN <= "01";
+         wait  for sysclk_Period;
+         BTN <= "10";
          wait  for sysclk_Period;
       END PROCESS;
 

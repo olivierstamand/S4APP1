@@ -59,7 +59,7 @@ begin
     case moins5(3) is
         when '1' =>
             code_signe <= "1111";
-            unite_s <= moins5(3) & signedOut(2 downto 0);
+            unite_s <= '0' & signedOut(2 downto 0);
         when '0' =>
             code_signe <= "0000";
             unite_s <= moins5;
