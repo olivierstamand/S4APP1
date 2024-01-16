@@ -50,11 +50,7 @@
     <Option Name="DSABoardId" Val="zybo-z7-10"/>
     <Option Name="DSADescription" Val="Vivado generated DSA"/>
     <Option Name="DSAEmuDir" Val="emu"/>
-<<<<<<< HEAD
-    <Option Name="WTXSimLaunchSim" Val="234"/>
-=======
     <Option Name="WTXSimLaunchSim" Val="249"/>
->>>>>>> c89274f (lol)
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
@@ -189,19 +185,12 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-<<<<<<< HEAD
-      <File Path="$PSRCDIR/sources_1/new/Bin2DualBCD_NS.vhd">
-=======
       <File Path="$PSRCDIR/sources_1/new/thermo2bin.vhd">
->>>>>>> c89274f (lol)
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-<<<<<<< HEAD
-      <File Path="$PSRCDIR/sources_1/new/mux.vhd">
-=======
       <File Path="$PSRCDIR/sources_1/new/thermo2bin4bits.vhd">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -215,7 +204,6 @@
         </FileInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/new/App_combi_top.vhd">
->>>>>>> c89274f (lol)
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -294,17 +282,7 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-<<<<<<< HEAD
-      <File Path="$PSRCDIR/sim_1/new/Bin2DualBCDTB.vhd">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sim_1/new/muxTB.vhd">
-=======
       <File Path="$PSRCDIR/sim_1/new/thermo2bin_TB.vhd">
->>>>>>> c89274f (lol)
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -312,11 +290,7 @@
       </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-<<<<<<< HEAD
-        <Option Name="TopModule" Val="muxTB"/>
-=======
         <Option Name="TopModule" Val="thermo2bin_TB"/>
->>>>>>> c89274f (lol)
         <Option Name="TopLib" Val="xil_defaultlib"/>
         <Option Name="TransportPathDelay" Val="0"/>
         <Option Name="TransportIntDelay" Val="0"/>

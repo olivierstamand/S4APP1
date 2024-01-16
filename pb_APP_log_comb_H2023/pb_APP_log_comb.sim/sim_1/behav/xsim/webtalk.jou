@@ -2,16 +2,6 @@
 # Webtalk v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-<<<<<<< HEAD
-# Start of session at: Mon Jan 15 20:29:48 2024
-# Process ID: 18584
-# Current directory: D:/Ecole/Session_4/APP1/S4APP1/pb_APP_log_comb_H2023/pb_APP_log_comb.sim/sim_1/behav/xsim
-# Command line: wbtcv.exe -mode batch -source D:/Ecole/Session_4/APP1/S4APP1/pb_APP_log_comb_H2023/pb_APP_log_comb.sim/sim_1/behav/xsim/xsim.dir/muxTB_behav/webtalk/xsim_webtalk.tcl -notrace
-# Log file: D:/Ecole/Session_4/APP1/S4APP1/pb_APP_log_comb_H2023/pb_APP_log_comb.sim/sim_1/behav/xsim/webtalk.log
-# Journal file: D:/Ecole/Session_4/APP1/S4APP1/pb_APP_log_comb_H2023/pb_APP_log_comb.sim/sim_1/behav/xsim\webtalk.jou
-#-----------------------------------------------------------
-source D:/Ecole/Session_4/APP1/S4APP1/pb_APP_log_comb_H2023/pb_APP_log_comb.sim/sim_1/behav/xsim/xsim.dir/muxTB_behav/webtalk/xsim_webtalk.tcl -notrace
-=======
 # Start of session at: Mon Jan 15 17:41:24 2024
 # Process ID: 382391
 # Current directory: /home/olivier/projects/S4APP1/pb_APP_log_comb_H2023/pb_APP_log_comb.sim/sim_1/behav/xsim
@@ -20,4 +10,3 @@ source D:/Ecole/Session_4/APP1/S4APP1/pb_APP_log_comb_H2023/pb_APP_log_comb.sim/
 # Journal file: /home/olivier/projects/S4APP1/pb_APP_log_comb_H2023/pb_APP_log_comb.sim/sim_1/behav/xsim/webtalk.jou
 #-----------------------------------------------------------
 source /home/olivier/projects/S4APP1/pb_APP_log_comb_H2023/pb_APP_log_comb.sim/sim_1/behav/xsim/xsim.dir/thermo2bin_TB_behav/webtalk/xsim_webtalk.tcl -notrace
->>>>>>> c89274f (lol)

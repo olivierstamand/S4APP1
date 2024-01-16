@@ -1,7 +1,2 @@
-<<<<<<< HEAD
-INFO: [VRFC 10-163] Analyzing VHDL file "D:/Ecole/Session_4/APP1/S4APP1/pb_APP_log_comb_H2023/pb_APP_log_comb.srcs/sim_1/new/muxTB.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'muxTB'
-=======
 INFO: [VRFC 10-163] Analyzing VHDL file "/home/olivier/projects/S4APP1/pb_APP_log_comb_H2023/pb_APP_log_comb.srcs/sim_1/new/thermo2bin_TB.vhd" into library xil_defaultlib
 INFO: [VRFC 10-3107] analyzing entity 'thermo2bin_TB'
->>>>>>> c89274f (lol)

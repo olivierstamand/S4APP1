@@ -1,37 +1,6 @@
 0.7
 2020.2
 Nov 18 2020
-<<<<<<< HEAD
-09:47:47
-D:/Ecole/Session_4/APP1/S4APP1/pb_APP_log_comb_H2023/pb_APP_log_comb.srcs/sim_1/imports/Pictures/compteur_simple_tb.vhd,1705326494,vhdl,,,,add1bit_tb,,,,,,,,
-D:/Ecole/Session_4/APP1/S4APP1/pb_APP_log_comb_H2023/pb_APP_log_comb.srcs/sim_1/imports/verif/AppCombi_top_tb.vhd,1705326494,vhdl2008,,,,appcombi_top_tb,,,,,,,,
-D:/Ecole/Session_4/APP1/S4APP1/pb_APP_log_comb_H2023/pb_APP_log_comb.srcs/sim_1/new/Add1BitTB.vhd,1705326494,vhdl,,,,add1bitatb,,,,,,,,
-D:/Ecole/Session_4/APP1/S4APP1/pb_APP_log_comb_H2023/pb_APP_log_comb.srcs/sim_1/new/Add4bitsTb.vhd,1705328645,vhdl,,,,add4bitstb,,,,,,,,
-D:/Ecole/Session_4/APP1/S4APP1/pb_APP_log_comb_H2023/pb_APP_log_comb.srcs/sim_1/new/Bin2DualBCDTB.vhd,1705351526,vhdl,,,,bin2dualbcdtb,,,,,,,,
-D:/Ecole/Session_4/APP1/S4APP1/pb_APP_log_comb_H2023/pb_APP_log_comb.srcs/sim_1/new/Fact2_3TB.vhd,1705333029,vhdl,,,,fact2_3tb,,,,,,,,
-D:/Ecole/Session_4/APP1/S4APP1/pb_APP_log_comb_H2023/pb_APP_log_comb.srcs/sim_1/new/dec3a8TB.vhd,1705334177,vhdl,,,,dec3a8tb,,,,,,,,
-D:/Ecole/Session_4/APP1/S4APP1/pb_APP_log_comb_H2023/pb_APP_log_comb.srcs/sim_1/new/moins5TB.vhd,1705339522,vhdl,,,,moins5tb,,,,,,,,
-D:/Ecole/Session_4/APP1/S4APP1/pb_APP_log_comb_H2023/pb_APP_log_comb.srcs/sim_1/new/muxTB.vhd,1705368575,vhdl,,,,muxtb,,,,,,,,
-D:/Ecole/Session_4/APP1/S4APP1/pb_APP_log_comb_H2023/pb_APP_log_comb.srcs/sim_1/new/pariteTb.vhd,1705345962,vhdl,,,,paritetb,,,,,,,,
-D:/Ecole/Session_4/APP1/S4APP1/pb_APP_log_comb_H2023/pb_APP_log_comb.srcs/sources_1/imports/src/AppCombi_top.vhd,1705326494,vhdl2008,,,,appcombi_top,,,,,,,,
-D:/Ecole/Session_4/APP1/S4APP1/pb_APP_log_comb_H2023/pb_APP_log_comb.srcs/sources_1/imports/src/septSegments_Top.vhd,1705326494,vhdl2008,,,,septsegments_top,,,,,,,,
-D:/Ecole/Session_4/APP1/S4APP1/pb_APP_log_comb_H2023/pb_APP_log_comb.srcs/sources_1/imports/src/septSegments_encodeur.vhd,1705357603,vhdl2008,,,,septsegments_encodeur,,,,,,,,
-D:/Ecole/Session_4/APP1/S4APP1/pb_APP_log_comb_H2023/pb_APP_log_comb.srcs/sources_1/imports/src/septSegments_refreshPmod.vhd,1705326494,vhdl2008,,,,septsegments_refreshpmod,,,,,,,,
-D:/Ecole/Session_4/APP1/S4APP1/pb_APP_log_comb_H2023/pb_APP_log_comb.srcs/sources_1/imports/src/synchro_module_v2.vhd,1705326494,vhdl2008,,,,synchro_module_v2,,,,,,,,
-D:/Ecole/Session_4/APP1/S4APP1/pb_APP_log_comb_H2023/pb_APP_log_comb.srcs/sources_1/new/Add1bitA.vhd,1705326494,vhdl,,,,add1bita,,,,,,,,
-D:/Ecole/Session_4/APP1/S4APP1/pb_APP_log_comb_H2023/pb_APP_log_comb.srcs/sources_1/new/Add1bitB.vhd,1705326494,vhdl,,,,add1bitb,,,,,,,,
-D:/Ecole/Session_4/APP1/S4APP1/pb_APP_log_comb_H2023/pb_APP_log_comb.srcs/sources_1/new/Add4bits.vhd,1705328565,vhdl,,,,add4bits,,,,,,,,
-D:/Ecole/Session_4/APP1/S4APP1/pb_APP_log_comb_H2023/pb_APP_log_comb.srcs/sources_1/new/Bin2DualBCD.vhd,1705353929,vhdl,,,,bin2dualbcd,,,,,,,,
-D:/Ecole/Session_4/APP1/S4APP1/pb_APP_log_comb_H2023/pb_APP_log_comb.srcs/sources_1/new/Bin2DualBCD_NS.vhd,1705355649,vhdl,,,,bin2dualbcd_ns,,,,,,,,
-D:/Ecole/Session_4/APP1/S4APP1/pb_APP_log_comb_H2023/pb_APP_log_comb.srcs/sources_1/new/Bin2DualBDC_s.vhd,1705355665,vhdl,,,,bin2dualbdc_s,,,,,,,,
-D:/Ecole/Session_4/APP1/S4APP1/pb_APP_log_comb_H2023/pb_APP_log_comb.srcs/sources_1/new/Fact2_3.vhd,1705332996,vhdl,,,,fact2_3,,,,,,,,
-D:/Ecole/Session_4/APP1/S4APP1/pb_APP_log_comb_H2023/pb_APP_log_comb.srcs/sources_1/new/Moins_5.vhd,1705340685,vhdl,,,,moins_5,,,,,,,,
-D:/Ecole/Session_4/APP1/S4APP1/pb_APP_log_comb_H2023/pb_APP_log_comb.srcs/sources_1/new/dec3a8.vhd,1705333827,vhdl,,,,dec3a8,,,,,,,,
-D:/Ecole/Session_4/APP1/S4APP1/pb_APP_log_comb_H2023/pb_APP_log_comb.srcs/sources_1/new/mux.vhd,1705368236,vhdl,,,,mux,,,,,,,,
-D:/Ecole/Session_4/APP1/S4APP1/pb_APP_log_comb_H2023/pb_APP_log_comb.srcs/sources_1/new/parite.vhd,1705345863,vhdl,,,,parite,,,,,,,,
-D:/Ecole/Session_4/APP1/S4APP1/pb_APP_log_comb_H2023/pb_APP_log_comb.srcs/sources_1/new/pariteImpair.vhd,1705336267,vhdl,,,,pariteimpair,,,,,,,,
-D:/Ecole/Session_4/APP1/S4APP1/pb_APP_log_comb_H2023/pb_APP_log_comb.srcs/sources_1/new/paritePair.vhd,1705335837,vhdl,,,,paritepair,,,,,,,,
-=======
 09:20:35
 /home/olivier/projects/S4APP1/pb_APP_log_comb_H2023/pb_APP_log_comb.srcs/sim_1/imports/Pictures/compteur_simple_tb.vhd,1704918545,vhdl,,,,add1bit_tb,,,,,,,,
 /home/olivier/projects/S4APP1/pb_APP_log_comb_H2023/pb_APP_log_comb.srcs/sim_1/imports/verif/AppCombi_top_tb.vhd,1640209414,vhdl2008,,,,appcombi_top_tb,,,,,,,,
@@ -61,4 +30,3 @@ D:/Ecole/Session_4/APP1/S4APP1/pb_APP_log_comb_H2023/pb_APP_log_comb.srcs/source
 /home/olivier/projects/S4APP1/pb_APP_log_comb_H2023/pb_APP_log_comb.srcs/sources_1/new/thermo2bin.vhd,1705374573,vhdl,,,,thermo2bin,,,,,,,,
 /home/olivier/projects/S4APP1/pb_APP_log_comb_H2023/pb_APP_log_comb.srcs/sources_1/new/thermo2bin4bits.vhd,1705374975,vhdl,,,,thermo2bin3bits,,,,,,,,
 /home/olivier/projects/S4APP1/pb_APP_log_comb_H2023/pb_APP_log_comb.srcs/sources_1/new/valid12bitsequence.vhd,1705368701,vhdl,,,,valid12bitsequence,,,,,,,,
->>>>>>> c89274f (lol)
