@@ -35,12 +35,12 @@ entity thermo2bin is
     Port (
         ADCth : in std_logic_vector (11 downto 0);
         ADCBin : out std_logic_vector (3 downto 0); 
-        valid : out std_logic
+        err : out std_logic
     );
 end thermo2bin;
 
 architecture Behavioral of thermo2bin is
-signal err_tmp: std_logic;
+signal err_tmp: std_logic_vector (3 downto 0);
 signal bin1: std_logic_vector (3 downto 0);
 signal bin2: std_logic_vector (3 downto 0);
 signal bin3: std_logic_vector (3 downto 0);
@@ -73,14 +73,14 @@ thermo1: thermo2bin3bits
   PORT MAP (
     ADC3th => ADCth(2 downto 0),
     prevmsb => '1',
-    err => err_tmp,
+    err => err_tmp(0),
     ADC4bin => bin1
   );
   
  thermo2: thermo2bin3bits
   PORT MAP (
     ADC3th => ADCth(5 downto 3),
-    err => err_tmp,
+    err => err_tmp(1),
     prevmsb => ADCth(2),
     ADC4bin => bin2
   );
@@ -88,16 +88,16 @@ thermo1: thermo2bin3bits
    PORT MAP (
     ADC3th => ADCth(8 downto 6),
     prevmsb => ADCth(5),
-    err => err_tmp,
+    err => err_tmp(2),
     ADC4bin => bin3
   );
    thermo4: thermo2bin3bits
    PORT MAP (
     ADC3th => ADCth(11 downto 9),
     prevmsb => ADCth(8),
-    err => err_tmp,
+    err => err_tmp(3),
     ADC4bin => bin4
   );
-valid <= err_tmp;
+err <=  err_tmp(0) OR err_tmp(1) OR err_tmp(2) OR err_tmp(3);
 
 end Behavioral;

@@ -27,9 +27,14 @@ use UNISIM.Vcomponents.ALL;
 
 entity AppCombi_top is
   port ( 
+          i_ADC_th    : in std_logic_vector (11 downto 0); 
           i_btn       : in    std_logic_vector (3 downto 0); -- Boutons de la carte Zybo
           i_sw        : in    std_logic_vector (3 downto 0); -- Interrupteurs de la carte Zybo
-          sysclk      : in    std_logic;                     -- horloge systeme
+          sysclk      : in    std_logic;        
+          o_DEL2      : out    std_logic;
+          o_DEL3      : out    std_logic; 
+          i_S1        : in    std_logic;
+          i_S2        : in    std_logic;          -- horloge systeme
           o_SSD       : out   std_logic_vector (7 downto 0); -- vers cnnecteur pmod afficheur 7 segments
           o_led       : out   std_logic_vector (3 downto 0); -- vers DELs de la carte Zybo
           o_led6_r    : out   std_logic;                     -- vers DEL rouge de la carte Zybo
@@ -37,9 +42,17 @@ entity AppCombi_top is
           );
 end AppCombi_top;
 
- 
-architecture BEHAVIORAL of AppCombi_top is
 
+architecture BEHAVIORAL of AppCombi_top is
+   signal ADCBin :std_logic_vector (3 downto 0);
+   signal parit :  std_logic_vector(3 downto 0);
+   signal  A2_3 :  std_logic_vector(2 downto 0);
+   signal Dizaines:  std_logic_vector(3 downto 0);
+   signal code_signe:  std_logic_vector(3 downto 0);
+   signal Unites_ns:  std_logic_vector(3 downto 0);
+   signal Unite_s:  std_logic_vector(3 downto 0);
+
+   signal codevalide : std_logic;
    constant nbreboutons     : integer := 4;    -- Carte Zybo Z7
    constant freq_sys_MHz    : integer := 125;  -- 125 MHz 
    
@@ -55,7 +68,60 @@ architecture BEHAVIORAL of AppCombi_top is
    signal d_AFF0            : std_logic_vector (3 downto 0):= "0000";
    signal d_AFF1            : std_logic_vector (3 downto 0):= "0000";
  
-   
+component Bin2DualBCD is
+ Port ( 
+        ADCbin : in std_logic_vector(3 downto 0);
+        Dizaines: out std_logic_vector(3 downto 0);
+        code_signe: out std_logic_vector(3 downto 0);
+        Unites_ns: out std_logic_vector(3 downto 0);
+        Unite_s: out std_logic_vector(3 downto 0)
+    );
+    
+end component; 
+component dec3a8 is
+    Port (
+    A2_3 : in std_logic_vector(2 downto 0);
+    LED : out std_logic_vector(7 downto 0)
+    );
+end component; 
+component thermo2bin is
+    Port (
+        ADCth : in std_logic_vector (11 downto 0);
+        ADCBin : out std_logic_vector (3 downto 0); 
+        err : out std_logic
+    );
+end component;
+component Fact2_3 is
+    Port (
+        N : in std_logic_vector(3 downto 0);
+        Cin : in std_logic;
+        A2_3 : out std_logic_vector(2 downto 0)
+    );
+end component;
+component mux is
+    Port (
+    ADCbin : in std_logic_vector(3 downto 0);
+    Dizaines: in std_logic_vector(3 downto 0);
+    Unites_ns: in std_logic_vector(3 downto 0);
+    Code_signe: in std_logic_vector(3 downto 0);
+    Unite_s: in std_logic_vector(3 downto 0);
+    erreur: in std_logic;
+    BTN: in std_logic_vector(3 downto 0);
+    S2 : in std_logic;
+    DAFF0: out std_logic_vector(3 downto 0); --droite
+    DAFF1: out std_logic_vector(3 downto 0) -- gauche
+    );
+end component;
+
+component parite is
+  Port (
+    s1 : in std_logic;
+    ABCin : in std_logic_vector(3 downto 0);
+    parite : out std_logic
+  );
+end component;
+
+
  component synchro_module_v2 is
    generic (const_CLK_syst_MHz: integer := freq_sys_MHz);
       Port ( 
@@ -82,15 +148,60 @@ end COMPONENT;
            );
    end component;
    
-
+signal pariteOut : std_logic;
 begin
-
+  paritee : parite port map
+   (
+    s1 => i_S1,
+    ABCin => ADCBin ,
+    parite => pariteOut
+  );
+  
+  o_led(0) <= pariteOut;
+  o_DEL2 <= pariteOut;
+    thermo: thermo2bin port map( 
+        ADCth  => i_ADC_th,
+        ADCBin => ADCBin, 
+        err => codevalide
+      );
+ dec: dec3a8 
+    port map (
+    A2_3 => A2_3,
+    LED => o_pmodled
+    );
+ fact : Fact2_3 
+    port map (
+        N => ADCBin,
+        Cin => '0',
+        A2_3 =>A2_3
+    );
+  BCD: Bin2DualBCD 
+ port map ( 
+        ADCbin => ADCBin,
+        Dizaines => Dizaines,
+        code_signe => code_signe,
+        Unites_ns => Unites_ns,
+        Unite_s => Unite_s
+    );
+      muxi : mux port map(
+        ADCbin  => ADCBin,
+        Dizaines => Dizaines,
+        Unites_ns => Unites_ns,
+        Code_signe => code_signe,
+        Unite_s => Unite_s,
+        erreur => codevalide,
+        BTN => i_btn,
+        S2 => i_S2,
+        DAFF0 => d_AFF0,   --droite
+        DAFF1 => d_AFF1 -- gauche
+      );
     inst_synch : synchro_module_v2
      generic map (const_CLK_syst_MHz => freq_sys_MHz)
          port map (
             clkm         => sysclk,
             o_CLK_5MHz   => clk_5MHz,
-            o_S_1Hz      => d_S_1Hz
+            o_S_1Hz      => o_DEL3
+           
         );  
 
    inst_aff :  septSegments_Top 
@@ -102,18 +213,8 @@ begin
            o_AFFSSD_Sim   => open,   -- ne pas modifier le "open". Ligne pour simulations seulement.
            o_AFFSSD       => o_SSD   -- sorties directement adaptees au connecteur PmodSSD
        );
-                   
-   adder : add4bits port map(i_sw,i_btn,d_sum,d_Cout);
-        
-   d_opa               <=  i_sw;                        -- operande A sur interrupteurs
-   d_opb               <=  i_btn;                       -- operande B sur boutons
-   d_cin               <=  '0';                     -- la retenue d'entr�e alterne 0 1 a 1 Hz
-      
-   d_AFF0              <=  d_sum(3 downto 0);           -- Le resultat de votre additionneur affich� sur PmodSSD(0)
-   d_AFF1              <=  '0' & '0' & '0' & d_Cout;    -- La retenue de sortie affich�e sur PmodSSD(1) (0 ou 1)
-   o_led6_r            <=  d_Cout;                      -- La led couleur repr�sente aussi la retenue en sortie  Cout
-   o_pmodled           <=  d_opa & d_opb;               -- Les op�randes d'entr�s reproduits combin�s sur Pmod8LD
-   o_led (3 downto 0)  <=  '0' & '0' & '0' & d_S_1Hz;   -- La LED0 sur la carte repr�sente la retenue d'entr�e        
+                           
+     
    
 
    

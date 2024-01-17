@@ -39,8 +39,8 @@ entity mux is
     Code_signe: in std_logic_vector(3 downto 0);
     Unite_s: in std_logic_vector(3 downto 0);
     erreur: in std_logic;
-    BTN: in std_logic_vector(1 downto 0);
-    S1, S2 : in std_logic;
+    BTN: in std_logic_vector(3 downto 0);
+    S2 : in std_logic;
     DAFF0: out std_logic_vector(3 downto 0); --droite
     DAFF1: out std_logic_vector(3 downto 0) -- gauche
     );
@@ -51,10 +51,13 @@ architecture Behavioral of mux is
 begin
 process (ADCbin, Dizaines, Unites_ns, Code_signe, Unite_s, BTN, S2) is
 begin
-    if (BTN(0) = '0' AND BTN(1) = '0') then
+    if S2 = '1' then
+        DAFF0 <= "1110";
+        DAFF1 <= "1101";
+    ELSIf (BTN(0) = '0' AND BTN(1) = '0') then
         DAFF0 <= Unites_ns;
         DAFF1 <= Dizaines;
-    ELSif (BTN(0) = '1' AND BTN(1) = '1') OR S2 = '1' then
+    ELSif (BTN(0) = '1' AND BTN(1) = '1') then
         DAFF0 <= "1110";
         DAFF1 <= "1101";
     ELSif BTN(0) = '1' then

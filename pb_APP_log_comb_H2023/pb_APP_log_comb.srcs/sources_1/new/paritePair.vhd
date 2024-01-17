@@ -33,15 +33,15 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity paritePair is
     Port ( 
-        ABCin : in std_logic_vector(2 downto 0);
-        parite: out std_logic_vector(3 downto 0)
+        ABCin : in std_logic_vector(3 downto 0);
+        parite: out std_logic
     );
 end paritePair;
 
 architecture Behavioral of paritePair is
 signal tmp : std_logic;
 begin
-tmp <= ABCin(0) XOR ABCin(1) XOR ABCin(2);
-parite <= tmp & ABCin;
+tmp <= ABCin(0) XOR ABCin(1) XOR ABCin(2) XOR ABCin(3);
+parite <= tmp ;
 
 end Behavioral;

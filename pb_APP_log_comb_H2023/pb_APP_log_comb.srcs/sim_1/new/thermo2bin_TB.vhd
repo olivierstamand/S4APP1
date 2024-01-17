@@ -38,7 +38,9 @@ architecture Behavioral of thermo2bin_TB is
 component thermo2bin is
     Port(
         ADCth : in std_logic_vector (11 downto 0);
-        ADCBin : out std_logic_vector (3 downto 0) 
+        ADCBin : out std_logic_vector (3 downto 0) ;
+        err: out std_logic
+
         );
 end component;
 
@@ -86,11 +88,22 @@ UUT: thermo2bin PORT MAP(input);
          wait  for sysclk_Period;
          input <= "000111111111";
          wait  for sysclk_Period;
-         input <= "000001010011";
+         input <= "001111111111";
         wait  for sysclk_Period;
-         input <= "000001010011";
+         input <= "011111111111";
          wait  for sysclk_Period;
-         input <= "000001010011";
+         input <= "111111111111";
+         wait  for sysclk_Period;
+         input <= "000000000010";
+         wait  for sysclk_Period;
+         input <= "000000101111";
+         wait  for sysclk_Period;
+         input <= "010111111111";
+         wait for sysclk_Period;
+         input <= "000000001011";
+         wait for sysclk_Period;
+
+         
       END PROCESS;
 
 END Behavioral;
